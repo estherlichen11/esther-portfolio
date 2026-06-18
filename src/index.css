@@ -5,7 +5,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-neutral-950 text-neutral-100 antialiased;
+    @apply bg-white text-neutral-900 antialiased;
     font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
   }
 }

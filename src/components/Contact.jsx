@@ -13,8 +13,8 @@ export default function Contact() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Let's work together</h2>
-          <p className="text-neutral-400 mb-10 leading-relaxed">
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">Let's work together</h2>
+          <p className="text-neutral-500 mb-10 leading-relaxed">
             I'm currently open to new opportunities. Whether you have a project in mind or just want to say hi — my inbox is always open.
           </p>
           <a
@@ -29,14 +29,14 @@ export default function Contact() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 pt-8 border-t border-neutral-800 flex justify-center gap-6 text-neutral-500 text-sm"
+          className="mt-16 pt-8 border-t border-neutral-200 flex justify-center gap-6 text-neutral-400 text-sm"
         >
-          <a href="#" className="hover:text-neutral-300 transition-colors">GitHub</a>
-          <a href="#" className="hover:text-neutral-300 transition-colors">LinkedIn</a>
-          <a href="#" className="hover:text-neutral-300 transition-colors">Twitter</a>
+          <a href="#" className="hover:text-neutral-700 transition-colors">GitHub</a>
+          <a href="#" className="hover:text-neutral-700 transition-colors">LinkedIn</a>
+          <a href="#" className="hover:text-neutral-700 transition-colors">Twitter</a>
         </motion.div>
 
-        <p className="text-neutral-700 text-xs mt-8">© 2026 Esther. Built with React & Framer Motion.</p>
+        <p className="text-neutral-300 text-xs mt-8">© 2026 Esther. Built with React & Framer Motion.</p>
       </div>
     </section>
   )
