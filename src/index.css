@@ -6,6 +6,9 @@
   }
   body {
     @apply bg-white text-neutral-900 antialiased;
-    font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .font-serif-display {
+    font-family: 'DM Serif Display', Georgia, serif;
   }
 }

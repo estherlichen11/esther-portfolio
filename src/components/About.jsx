@@ -1,51 +1,47 @@
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
-const skills = ['React', 'TypeScript', 'Node.js', 'Python', 'PostgreSQL', 'Tailwind CSS', 'Figma', 'AWS']
-
-function FadeIn({ children, delay = 0 }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay }}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
 export default function About() {
-  return (
-    <section id="about" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">About me</h2>
-          <p className="text-neutral-500 leading-relaxed mb-4">
-            I'm a software developer who loves turning ideas into elegant, user-friendly products. I thrive at the intersection of design and engineering.
-          </p>
-          <p className="text-neutral-500 leading-relaxed">
-            When I'm not coding, you'll find me hiking, sketching UI concepts, or reading about new technologies. I believe great software should be both functional and delightful.
-          </p>
-        </FadeIn>
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-60px' })
 
-        <FadeIn delay={0.2}>
-          <h3 className="text-neutral-400 font-semibold mb-4 uppercase tracking-widest text-sm">Skills</h3>
-          <div className="flex flex-wrap gap-2">
-            {skills.map((skill) => (
-              <span
-                key={skill}
-                className="px-3 py-1.5 bg-neutral-100 border border-neutral-200 text-neutral-600 rounded-full text-sm hover:border-violet-400 hover:text-violet-600 transition-colors"
-              >
-                {skill}
-              </span>
-            ))}
+  return (
+    <section id="about" className="px-8 py-24 border-t border-neutral-200">
+      <div className="max-w-5xl mx-auto" ref={ref}>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="grid md:grid-cols-2 gap-16"
+        >
+          <div>
+            <h2 className="font-serif-display text-3xl text-neutral-900 mb-6">About me</h2>
+            <p className="text-neutral-500 leading-relaxed mb-4 text-sm">
+              My background in architecture has developed my technical and visual skills in order to create engaging spaces. With this education, I've learned how to rethink typical user experiences to develop innovative and intuitive designs.
+            </p>
+            <p className="text-neutral-500 leading-relaxed text-sm">
+              Now, I've shifted my aspirations to align more with human-centered design in digital spaces. Whenever I'm not in the studio, you can find me trying new recipes, online shopping, or snacking on sardines.
+            </p>
           </div>
-        </FadeIn>
+          <div className="flex flex-col gap-4">
+            <div>
+              <p className="text-xs text-neutral-400 uppercase tracking-widest mb-3">Contact</p>
+              <a href="mailto:eichen@berkeley.edu" className="text-sm text-pink-600 underline underline-offset-2 hover:text-pink-700 block mb-1">
+                eichen@berkeley.edu
+              </a>
+              <a href="#" className="text-sm text-pink-600 underline underline-offset-2 hover:text-pink-700 block">
+                LinkedIn
+              </a>
+            </div>
+            <div className="pt-4">
+              <p className="text-xs text-neutral-400 uppercase tracking-widest mb-3">Education</p>
+              <p className="text-sm text-neutral-600">UC Berkeley</p>
+              <p className="text-sm text-neutral-400">B.S. Architecture, 2024</p>
+            </div>
+          </div>
+        </motion.div>
+
+        <p className="text-neutral-300 text-xs mt-16">© 2026 Esther Li-Chen</p>
       </div>
     </section>
   )
